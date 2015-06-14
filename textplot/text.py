@@ -28,7 +28,7 @@ class Text:
             path (str): The file path.
         """
 
-        with open(path, 'r', errors='replace') as f:
+        with open(path, 'r', errors='replace', encoding='utf-8') as f:
             return cls(f.read())
 
 
