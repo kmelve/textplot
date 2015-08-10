@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 
 import click
 
@@ -28,6 +28,7 @@ def build_graph(path, term_depth=1000, skim_depth=10,
     t = Text.from_file(path)
     click.echo('Extracted %d tokens' % len(t.tokens))
 
+
     m = Matrix()
 
     # Index the term matrix.
@@ -39,5 +40,5 @@ def build_graph(path, term_depth=1000, skim_depth=10,
     # Construct the network.
     click.echo('\nGenerating graph:')
     g.build(t, m, skim_depth, d_weights)
-
+    
     return g
