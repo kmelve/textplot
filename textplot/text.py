@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 
 import os
 import re
@@ -8,6 +8,7 @@ import numpy as np
 import pkgutil
 
 from nltk.stem import PorterStemmer
+from nltk.stem.snowball import SnowballStemmer
 from sklearn.neighbors import KernelDensity
 from collections import OrderedDict, Counter
 from scipy.spatial import distance
