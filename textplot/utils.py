@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import re
+import regex
 import numpy as np
 import functools
 
@@ -21,9 +22,9 @@ def tokenize(text):
         dict: The next token.
     """
 
-    # stem = PorterStemmer().stem
     stem = SnowballStemmer('norwegian').stem
-    tokens = re.finditer(u'\w+', text.lower())
+    tokens = regex.finditer('\p{L}+', text.lower())
+
 
     for offset, match in enumerate(tokens):
 
