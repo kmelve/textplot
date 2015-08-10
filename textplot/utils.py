@@ -1,11 +1,11 @@
-
+# -*- coding: utf-8 -*-
 
 import re
 import numpy as np
 import functools
 
 from collections import OrderedDict
-from nltk.stem import PorterStemmer
+from nltk.stem.snowball import SnowballStemmer
 from itertools import islice
 
 
@@ -21,8 +21,9 @@ def tokenize(text):
         dict: The next token.
     """
 
-    stem = PorterStemmer().stem
-    tokens = re.finditer('[a-z]+', text.lower())
+    # stem = PorterStemmer().stem
+    stem = SnowballStemmer('norwegian').stem
+    tokens = re.finditer(u'\w+', text.lower())
 
     for offset, match in enumerate(tokens):
 
